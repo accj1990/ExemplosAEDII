@@ -2,11 +2,12 @@
 {
     public class Celula
     {
-        public int valor;
+        public int? valor;
         public Celula? prox;
-        public Celula(int valor)
+
+        public Celula(int? v)
         {
-            this.valor = valor;
+            valor = v;
             this.prox = null;
         }
     }

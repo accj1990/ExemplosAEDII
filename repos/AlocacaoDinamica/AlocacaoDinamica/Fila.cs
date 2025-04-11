@@ -11,13 +11,12 @@ namespace AlocacaoDinamica
             this.primeiro = ultimo = new Celula(-1);
         }
 
-        // Inserir na fila
         public void Inserir(int valor)
         {
             if (primeiro == ultimo)
             {
                 this.primeiro.valor = valor;
-                this.ultimo = new Celula(-1);
+                this.ultimo = new Celula(null);
                 this.primeiro.prox = this.ultimo;
             }
             else
@@ -28,8 +27,36 @@ namespace AlocacaoDinamica
             }
         }
 
-        // Remover na fila
+        public int? Remover()
+        {
+            if (primeiro == ultimo && primeiro.valor == null)
+            {
+                Console.WriteLine("Fila vazia, não é possível remover.");
+                return -1;
+            }
+            else
+            {
+                int? valor = primeiro.valor;
+                Celula tmp = primeiro;
+                primeiro = primeiro.prox;
+                tmp.prox = null;
+                return valor;
+            }
+        }
 
-        // Mostrar fila
+        public void Mostrar()
+        {
+            if (primeiro == ultimo && primeiro.valor == null)
+            {
+                Console.WriteLine("Fila vazia");
+            }
+            else
+            {
+                for (Celula i = primeiro; i.prox != null; i = i.prox)
+                {
+                    Console.WriteLine(i.valor);
+                }
+            }
+        }
     }
 }
