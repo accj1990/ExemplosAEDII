@@ -6,7 +6,7 @@ class Program
     {
         Console.WriteLine("Hello world!!");
 
-        Fila f = new Fila();
+        /*Fila f = new Fila();
 
         f.Inserir(1);
         f.Mostrar();
@@ -21,6 +21,28 @@ class Program
         f.Mostrar();
         f.Remover();
         f.Mostrar();
+        */
+
+        Pilha p = new Pilha();
+        p.Inserir(1);
+        p.Mostrar();
+        p.Remover();
+        p.Mostrar();
+
+        p.Inserir(1);
+        p.Inserir(2);
+        p.Inserir(3);
+        p.Inserir(4);
+        p.Inserir(5);
+
+        p.Mostrar();
+
+        p.Remover();
+        p.Remover();
+        p.Mostrar();
+
+
+
 
 
 
