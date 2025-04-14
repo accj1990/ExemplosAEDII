@@ -32,7 +32,7 @@ namespace AlocacaoDinamica
             if (ultimo == null)
             {
                 ultimo = new Celula(valor);
-                primeiro.prox.prox = ultimo;
+                primeiro!.prox!.prox = ultimo;
             }
             else
             {
@@ -44,8 +44,19 @@ namespace AlocacaoDinamica
         }
         public void InserirPosicao(int valor, int pos)
         {
+            int cont = 0;
+            Celula i;
+            for (i = primeiro!; i.prox != null && cont < pos - 1; i = i!.prox!) ;
 
+            Celula tmp = new Celula(valor);
 
+            tmp.prox = i;
+            if (i == primeiro)
+            {
+                primeiro = tmp;
+            }
+
+            tmp = null;
         }
 
         public void RemoverInicio()
@@ -65,7 +76,7 @@ namespace AlocacaoDinamica
         public void Mostrar()
         {
             Console.WriteLine(" ");
-            for (Celula i = primeiro; i != null; i = i.prox)
+            for (Celula i = primeiro!; i != null; i = i.prox!)
             {
                 Console.Write(i.valor + " ");
             }

@@ -53,6 +53,8 @@ class Program
         lista.InserirFim(6);
         lista.InserirInicio(0);
         lista.Mostrar();
+        lista.InserirPosicao(7, 0);
+        lista.Mostrar();
 
     }
 }
