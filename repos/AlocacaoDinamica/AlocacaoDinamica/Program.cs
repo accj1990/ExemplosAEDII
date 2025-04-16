@@ -55,6 +55,11 @@ class Program
         lista.Mostrar();
         lista.InserirPosicao(7, 0);
         lista.Mostrar();
+        lista.InserirPosicao(8, 3);
+        lista.InserirPosicao(9, 4);
+        lista.Mostrar();
+
+
 
     }
 }

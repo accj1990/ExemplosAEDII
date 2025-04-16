@@ -46,17 +46,17 @@ namespace AlocacaoDinamica
         {
             int cont = 0;
             Celula i;
-            for (i = primeiro!; i.prox != null && cont < pos - 1; i = i!.prox!) ;
+            for (i = primeiro!; i.prox != null && cont < pos - 1; i = i!.prox!, cont++) ;
 
             Celula tmp = new Celula(valor);
 
-            tmp.prox = i;
+            tmp.prox = i.prox;
+            i.prox = tmp;
+
             if (i == primeiro)
             {
                 primeiro = tmp;
             }
-
-            tmp = null;
         }
 
         public void RemoverInicio()
