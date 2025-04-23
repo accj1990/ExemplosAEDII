@@ -44,7 +44,7 @@ class Program
 
         Lista lista = new Lista();
         lista.InserirPosicao(7, 0);
-
+        lista.RemoverPosicao(0);
 
         lista.InserirInicio(1);
         lista.InserirInicio(2);
@@ -67,9 +67,15 @@ class Program
         lista.InserirFim(5);
         lista.Mostrar();
 
+        lista.RemoverPosicao(3);
+        lista.RemoverPosicao(4);
+        lista.Mostrar();
 
-        //lista.RemoverPosicao(3);
-        //lista.RemoverPosicao(4);
+        lista.RemoverInicio();
+        lista.RemoverInicio();
+        lista.Mostrar();
+
+
 
         //lista.Mostrar();
 

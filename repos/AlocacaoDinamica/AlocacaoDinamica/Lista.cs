@@ -72,12 +72,25 @@ namespace AlocacaoDinamica
 
         public int? RemoverInicio()
         {
-            Celula tmp = primeiro!;
-            int valor = (int)tmp.valor!;
-            primeiro = tmp.prox;
+            int valor = -1;
+            if (primeiro == ultimo & primeiro == null)
+            {
+                Console.WriteLine("Não é possível remover, pois a lista está vazia.");
+            }
+            else if (primeiro == ultimo)
+            {
+                valor = (int)primeiro!.valor!;
+                primeiro = ultimo = null;
 
-            tmp.prox = null;
-            tmp = null;
+            }
+            else
+            {
+                valor = (int)primeiro!.valor!;
+                Celula tmp = primeiro!.prox!;
+                primeiro.prox = null;
+                primeiro = tmp;
+            }
+
             return valor;
         }
         public int RemoverFim()
@@ -102,14 +115,25 @@ namespace AlocacaoDinamica
 
         public void RemoverPosicao(int pos)
         {
+            if (pos < 0)
+            {
+                Console.WriteLine("Posição inválida ou não existe.");
+            }
+
             int cont = 0;
             Celula i;
-            for (i = primeiro!; i.prox != null && cont < pos - 1; i = i!.prox!, cont++) ;
+            for (i = primeiro!; i.prox != null && cont >= 0 && cont < pos - 1; i = i!.prox!, cont++) ;
 
-            Celula tmp = i;
-
-            tmp.prox = tmp.prox!.prox;
-            tmp = null;
+            if (cont == pos)
+            {
+                primeiro = ultimo = null;
+            }
+            else
+            {
+                Celula tmp = i;
+                i.prox = i!.prox!.prox!;
+                tmp = null;
+            }
         }
 
         public void Mostrar()
