@@ -43,21 +43,37 @@ class Program
         */
 
         Lista lista = new Lista();
+        lista.InserirPosicao(7, 0);
+
 
         lista.InserirInicio(1);
         lista.InserirInicio(2);
         lista.Mostrar();
 
         lista.InserirFim(5);
-        lista.Mostrar();
         lista.InserirFim(6);
+        lista.Mostrar();
+
         lista.InserirInicio(0);
         lista.Mostrar();
+
         lista.InserirPosicao(7, 0);
         lista.Mostrar();
         lista.InserirPosicao(8, 3);
         lista.InserirPosicao(9, 4);
         lista.Mostrar();
+
+        lista.InserirFim(10);
+        lista.InserirFim(5);
+        lista.Mostrar();
+
+
+        //lista.RemoverPosicao(3);
+        //lista.RemoverPosicao(4);
+
+        //lista.Mostrar();
+
+
 
 
 
