@@ -130,9 +130,16 @@ namespace AlocacaoDinamica
             }
             else
             {
-                Celula tmp = i;
-                i.prox = i!.prox!.prox!;
-                tmp = null;
+                if (cont + 1 < pos)
+                {
+                    Console.WriteLine("Não é possível remover, posição inválida.");
+                }
+                else
+                {
+                    Celula tmp = i;
+                    i.prox = i!.prox!.prox!;
+                    tmp = null;
+                }
             }
         }
 

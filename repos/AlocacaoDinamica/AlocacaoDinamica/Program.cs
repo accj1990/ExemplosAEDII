@@ -75,10 +75,12 @@ class Program
         lista.RemoverInicio();
         lista.Mostrar();
 
+        lista.RemoverFim();
+        lista.RemoverFim();
 
-
-        //lista.Mostrar();
-
+        lista.Mostrar();
+        lista.RemoverPosicao(6);
+        lista.Mostrar();
 
 
 
