@@ -1,38 +1,18 @@
-﻿class Program
+﻿using ExemplosFPAA;
+
+class Program
 {
-    public static void Main(string[] args)
+    static void Main()
     {
-        int[] valores = { 1, 2, 3, 4, 5, 14, 25, 35 };
+        int x = 23;
+        Questao01 questao01 = new Questao01();
+        int resultado = questao01.PesquisaBinaria(x);
 
-        valores = unifica(valores); // 3, 3, 4, 5, 14, 25, 35
-
-        valores = unifica(valores); // 4, 5, 6, 14, 25, 35
-
-        // ...
-
+        if (resultado != -1)
+            Console.WriteLine($"\nElemento encontrado na posição {resultado}");
+        else
+            Console.WriteLine("\nElemento não encontrado no vetor");
     }
 
-    public static int[] unifica(int[] valores)
-    {
-
-
-
-
-        return valores;
-    }
-
-    public static int[] removerElementos(int[] valores)
-    {
-        int x = valores[0];
-        int y = valores[1];
-
-        int soma = x + y;
-
-        for (int i = 2; i < valores.Length; i++)
-        {
-
-        }
-
-        return valores;
-    }
 }
+
